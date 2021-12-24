@@ -114,7 +114,8 @@ ul {
     /* kelimeleri tek satira sigdirir*/
 }
 
-.btn-general { /* bunlar bütün butonlarin genel özellikleri*/
+.btn-general {
+    /* bunlar bütün butonlarin genel özellikleri*/
     font-family: var(--secondary-font);
     font-size: 1.4rem;
     text-transform: uppercase;
@@ -123,17 +124,32 @@ ul {
     letter-spacing: 0.2rem;
     font-weight: 700;
     border-radius: 2rem;
+    cursor: pointer;
 }
 
 .btn-light {
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
-    
+
     transition: var(--general-transition);
 }
+
 .btn-light:hover {
     background-color: var(--primary-color);
     color: var(--light-color);
+}
+
+.btn-dark {
+    border: solid 2px var(--light-color);
+    color: var(--light-color);
+    transition: var(--general-transition);
+
+}
+
+.btn-dark:hover {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+
 }
 
 .horizontal-title {
@@ -141,6 +157,14 @@ ul {
     font-size: 4rem;
     text-transform: uppercase;
     font-weight: 300;
+}
+
+.pri-background {
+    background-color: var(--primary-color);
+}
+
+.light-color {
+    color: var(--light-color);
 }
 
 
@@ -330,4 +354,128 @@ ul {
 /* ABOUT SECTION*/
 .about-detail {
     margin-left: 4rem;
+}
+
+/*SERVICES SECTION*/
+
+.services-detail {
+    margin-right: 4rem;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.btn-arrows {
+    display: flex;
+    padding-top: 2rem;
+}
+
+#arrow-left,
+#arrow-right {
+    cursor: pointer;
+    margin-left: 2rem;
+}
+
+/** PORTFOLIO SECTION **/
+
+section#portfolio {
+    padding-top: 8rem;
+}
+
+.portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "item-1 item-2 item-3 item-3"
+    "item-1 item-4 item-5 item-6"
+    "item-7 item-7 item-8 item-6"
+    ;
+}
+
+.portfolio-item {    /* her bir resmin classidir*/
+   
+    width: 100%;
+    height: 25rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-item::before {
+    content: " ";
+    position: absolute;
+    background-color: rgba(71, 146, 165, 0.9);
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: var(--general-transition);
+    /* mavilik görünmez olsun diye böyle verdik */
+    top: 0;
+    left: 0; /* soldan acilsin diye bu degerleri verdik*/
+}
+.portfolio-item:hover::before {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+}
+.portfolio-item span{
+    font-size: 5rem;
+    color: var(--light-color);
+    position: relative;
+    z-index: 90;
+    opacity: 0;
+    transition: var(--general-transition);
+}
+
+.portfolio-item:hover span{
+    opacity: 1;
+}
+.portfolio-item-1 {
+    background-image: url("../img/portfolio-item-1.jpg");
+    grid-area: item-1;
+    min-height: 50rem;
+}
+
+.portfolio-item-2 {
+    background-image: url("../img/portfolio-item-2.jpg");
+    grid-area: item-2;
+}
+
+.portfolio-item-3 {
+    background-image: url("../img/portfolio-item-3.jpg");
+    grid-area: item-3;
+}
+
+.portfolio-item-4 {
+    background-image: url("../img/portfolio-item-4.jpg");
+    grid-area: item-4;
+}
+
+.portfolio-item-5 {
+    background-image: url("../img/portfolio-item-5.jpg");
+    grid-area: item-5;
+}
+
+.portfolio-item-6 {
+    background-image: url("../img/portfolio-item-6.jpg");
+    grid-area: item-6;
+    min-height: 50rem;
+}
+
+.portfolio-item-7 {
+    background-image: url("../img/portfolio-item-7.jpg");
+    grid-area: item-7;
+}
+
+.portfolio-item-8 {
+    background-image: url("../img/portfolio-item-8.jpg");
+    grid-area: item-8;
 }
