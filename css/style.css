@@ -123,6 +123,7 @@ ul {
     letter-spacing: 0.2rem;
     font-weight: 700;
     border-radius: 2rem;
+    cursor: pointer;
 }
 
 .btn-light {
@@ -136,11 +137,31 @@ ul {
     color: var(--light-color);
 }
 
+.btn-dark {
+    border: solid 2px var(--light-color);
+    color: var(--light-color);
+    transition: var(--general-transition);
+    
+}
+.btn-dark:hover{
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    
+}
+
 .horizontal-title {
     padding-bottom: 2rem;
     font-size: 4rem;
     text-transform: uppercase;
     font-weight: 300;
+}
+
+.pri-background{
+    background-color: var(--primary-color); 
+}
+
+.light-color {
+    color: var(--light-color);
 }
 
 
@@ -282,8 +303,8 @@ ul {
 
 .nav-link:hover::after {
     width: 100%;
-    opacity: 1;
-}
+    opacity: 1; 
+} 
 
 /** LOGO **/
 
@@ -331,3 +352,23 @@ ul {
 .about-detail {
     margin-left: 4rem;
 }
+
+/*SERVICES SECTION*/
+
+.services-detail{
+    margin-right: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+}
+
+.btn-arrows {
+    display: flex;
+    padding-top: 2rem;
+}
+#arrow-left, #arrow-right {
+    cursor: pointer;
+    margin-left: 2rem;
+}
+
