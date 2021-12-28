@@ -388,15 +388,16 @@ section#portfolio {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    grid-template-areas: 
-    "item-1 item-2 item-3 item-3"
-    "item-1 item-4 item-5 item-6"
-    "item-7 item-7 item-8 item-6"
+    grid-template-areas:
+        "item-1 item-2 item-3 item-3"
+        "item-1 item-4 item-5 item-6"
+        "item-7 item-7 item-8 item-6"
     ;
 }
 
-.portfolio-item {    /* her bir resmin classidir*/
-   
+.portfolio-item {
+    /* her bir resmin classidir*/
+
     width: 100%;
     height: 25rem;
     background-position: center;
@@ -419,14 +420,17 @@ section#portfolio {
     transition: var(--general-transition);
     /* mavilik görünmez olsun diye böyle verdik */
     top: 0;
-    left: 0; /* soldan acilsin diye bu degerleri verdik*/
+    left: 0;
+    /* soldan acilsin diye bu degerleri verdik*/
 }
+
 .portfolio-item:hover::before {
     opacity: 1;
     width: 100%;
     height: 100%;
 }
-.portfolio-item span{
+
+.portfolio-item span {
     font-size: 5rem;
     color: var(--light-color);
     position: relative;
@@ -435,9 +439,10 @@ section#portfolio {
     transition: var(--general-transition);
 }
 
-.portfolio-item:hover span{
+.portfolio-item:hover span {
     opacity: 1;
 }
+
 .portfolio-item-1 {
     background-image: url("../img/portfolio-item-1.jpg");
     grid-area: item-1;
@@ -478,4 +483,104 @@ section#portfolio {
 .portfolio-item-8 {
     background-image: url("../img/portfolio-item-8.jpg");
     grid-area: item-8;
+}
+
+/* TEAM SECTION*/
+
+.team-detail {
+    margin-left: 4rem;
+}
+
+.team-items {
+    display: flex;
+}
+
+.team-item {
+    position: relative;
+}
+
+.team-item-overlay {
+    background-color: rgba(71, 146, 165, 0.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+}
+
+.team-item-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.team-item:hover .team-item-overlay {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: var(--general-transition);
+}
+
+.team-item-info h5 {
+    color: var(--light-color);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+.team-item-info p {
+    font-size: 2rem;
+    color: var(--light-color);
+    padding: 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+ul.team-social-list {
+    display: flex;
+    line-height: 3.4rem;
+    text-align: center;
+}
+
+ul.team-social-list li {
+    padding: 0;
+}
+
+ul.team-social-list li a {
+    border: 1px solid var(--light-color);
+    border-radius: 50%;
+    display: inline-block;
+    height: 3.2rem;
+    width: 3.2rem;
+    margin: 0 0.5rem;
+    transition: var(--general-transition);
+
+}
+
+ul.team-social-list li i {
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+
+ul.team-social-list li:nth-child(1) a:hover {
+    background-color: #ff0000;
+    border-color: transparent;
+
+}
+
+ul.team-social-list li:nth-child(2) a:hover {
+    background-color: #38a1f3;
+    border-color: transparent;
+
+}
+
+ul.team-social-list li:nth-child(3) a:hover {
+    background-color: #0e76a8;
+    border-color: transparent;
 }
